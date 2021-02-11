@@ -20,7 +20,7 @@ class Furnitures {
     draw() {
         if (this.selected) {
             fill(255);
-            strokeWeight(1);
+            strokeWeight(3);
             stroke(0);
             rect(this.x, this.y, this.widthPix, this.heightPix);
         }
@@ -28,7 +28,7 @@ class Furnitures {
         for (var i = 0; i < this.shape.length; i++) {
             var ligne = this.shape[i];
             for (var j = 0; j < this.shape.length; j++) {
-                if (ligne[j] == true) {
+                if (ligne[j]) {
                     fill(col);
                     noStroke();
                     rect(
@@ -39,6 +39,21 @@ class Furnitures {
                     );
                 }
             }
+        }
+    }
+    move(x, y, room) {
+        this.x = x - this.widthPix / 2;
+        if (x >= room.x + room.widthPix - this.widthPix / 2) {
+            this.x = room.x + room.widthPix - this.widthPix;
+        } else if (x <= room.x + this.widthPix / 2) {
+            this.x = room.x;
+        }
+
+        this.y = y - this.heightPix / 2;
+        if (y >= room.y + room.heightPix - this.heightPix / 2) {
+            this.y = room.y + room.heightPix - this.heightPix;
+        } else if (y <= room.y + this.heightPix / 2) {
+            this.y = room.y;
         }
     }
 

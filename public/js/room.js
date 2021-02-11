@@ -8,12 +8,12 @@ class Room {
         this.canvW = canvW;
         this.canvH = canvH;
 
-        this.pixRatio = w >= h * 2 ? w / (canvW - margin) : h / (canvH - margin);
+        this.pixRatio = w >= h * 1.25 ? w / (canvW - margin) : h / (canvH - margin);
         this.widthPix = w / this.pixRatio;
         this.heightPix = h / this.pixRatio;
 
-        this.x = canvW / 2 - this.widthPix / 2;
-        this.y = canvH / 2 - this.heightPix / 2;
+        this.x = this.canvW / 2 - this.widthPix / 2;
+        this.y = this.canvH / 2 - this.heightPix / 2;
 
         this.selection = null;
 
@@ -33,5 +33,32 @@ class Room {
         strokeWeight(4);
         stroke(0);
         rect(this.x, this.y, this.widthPix, this.heightPix);
+    }
+    clearSelection() {
+        this.selection = null;
+        for (var i = this.furnitures.length - 1; i >= 0; i--) {
+            this.furnitures[i].selected = false;
+        }
+    }
+    resize() {
+        var w = parseFloat(document.getElementById("width").value);
+        var h = parseFloat(document.getElementById("height").value);
+
+        if (!w || !h) {
+            return;
+        }
+
+        this.width = w ? w : this.width;
+        this.height = h ? h : this.height;
+
+        console.log(this.width, this.height);
+
+        this.pixRatio =
+            w >= h * 2 ? w / (this.canvW - margin) : h / (this.canvH - margin);
+        this.widthPix = w / this.pixRatio;
+        this.heightPix = h / this.pixRatio;
+
+        this.x = this.canvW / 2 - this.widthPix / 2;
+        this.y = this.canvH / 2 - this.heightPix / 2;
     }
 }
