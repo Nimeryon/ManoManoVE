@@ -13,5 +13,5 @@ render(
     <ApolloProvider client={client}>
         <App />
     </ApolloProvider>,
-    document.getElementById('app')
+    document.getElementById('root')
 );
