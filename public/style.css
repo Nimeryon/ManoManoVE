@@ -1,0 +1,15 @@
+.logoPro {
+  height: 30px;
+}
+
+.grossebar {
+  width: 900px;
+  border-radius: 5px 0px 0px 5px;
+  height: 38px;
+  border: 0px;
+}
+
+.searchIcon {
+  height: 25px;
+  padding: -25px;
+}

@@ -1,22 +1,7 @@
-# Your amazing app
+# ![](https://i.imgur.com/m6G5ayA.png)
+Vous avez du mal à vous projeter dans votre pièce ? Voici ManoMano VE (Viewing Experience), votre application de création d’intérieur en réalité augmentée.
 
-## Description
-Here is a template for using an express backend with a react frontend.
+## Installation
 
-## Setup
-
-* Use the `.env` file to hide any information (like API keys) from the repository
-* Add any file or folder to `.gitignore` to have it not uploaded to the repository
-
-## Use
-
-* Use `npm install` to install all dependencies.
-* To use it first build the react app with `npm run build` then start the server with `npm run start`.
-
-## Available npm scripts
-
-```
-npm run start           # Start the node js server
-npm run dev             # Start the node js server with nodemon
-npm run build           # Start webpack (build the bundle js file)
-```
+* Tapez `npm install` pour installer toutes les dépendances
+* Faites un build de l'app React avec `npm run build` et démarrez le serveur avec `npm run start`.
