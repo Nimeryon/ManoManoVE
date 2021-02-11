@@ -1,4 +1,4 @@
-# ManoManoVE
+# ![](https://i.imgur.com/m6G5ayA.png)
 Vous avez du mal à vous projeter dans votre pièce ? Voici ManoMano VE (Viewing Experience), votre application de création d’intérieur en réalité augmentée.
 
 ## Installation
