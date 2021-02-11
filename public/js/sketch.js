@@ -6,7 +6,7 @@ var furnitures;
 
 function setup() {
     createCanvas(800, 600);
-    room = new Room(4.5, 2.3, canvas_width, canvas_height);
+    room = new Room(15, 10, canvas_width, canvas_height);
     room.furnitures = [
         new Furnitures(
             [50, 100],
@@ -36,10 +36,10 @@ function setup() {
 function draw() {
     background(255);
 
-    room.draw();
     for (var i = 0; i < room.furnitures.length; i++) {
         room.furnitures[i].draw();
     }
+    room.draw();
 }
 
 function mousePressed() {

@@ -8,7 +8,8 @@ class Room {
         this.canvW = canvW;
         this.canvH = canvH;
 
-        this.pixRatio = w >= h * 1.25 ? w / (canvW - margin) : h / (canvH - margin);
+        this.pixRatio =
+            w >= h * 1.25 ? w / (this.canvW - margin) : h / (this.canvH - margin);
         this.widthPix = w / this.pixRatio;
         this.heightPix = h / this.pixRatio;
 
@@ -22,14 +23,16 @@ class Room {
     draw() {
         fill(0);
         strokeWeight(1);
+        stroke(0);
         text(this.width + " m", this.x + this.widthPix / 2 - 5, this.y - 6);
+
         text(
             this.height + " m",
             this.x + this.widthPix + 5,
             this.y + this.heightPix / 2 - 5
         );
 
-        fill(255);
+        fill(255, 0);
         strokeWeight(4);
         stroke(0);
         rect(this.x, this.y, this.widthPix, this.heightPix);
@@ -51,14 +54,16 @@ class Room {
         this.width = w ? w : this.width;
         this.height = h ? h : this.height;
 
-        console.log(this.width, this.height);
-
         this.pixRatio =
-            w >= h * 2 ? w / (this.canvW - margin) : h / (this.canvH - margin);
+            w >= h * 1.25 ? w / (this.canvW - margin) : h / (this.canvH - margin);
         this.widthPix = w / this.pixRatio;
         this.heightPix = h / this.pixRatio;
 
         this.x = this.canvW / 2 - this.widthPix / 2;
         this.y = this.canvH / 2 - this.heightPix / 2;
+
+        for (var i = this.furnitures.length - 1; i >= 0; i--) {
+            this.furnitures[i].resize(this.pixRatio);
+        }
     }
 }
