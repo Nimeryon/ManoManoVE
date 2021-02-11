@@ -21,9 +21,6 @@ function setup() {
   offset_y = 10
 }
 
-function outline(){
-    
-}
 
 function draw() {
     let hexa = furniture.color
