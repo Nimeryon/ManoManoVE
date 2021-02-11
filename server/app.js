@@ -15,7 +15,6 @@ const schema = require("./schemas");
 
 const uri = `mongodb+srv://${process.env.MongoUser}:${process.env.MongoPassword}@cluster0.ojl1y.mongodb.net/${process.env.MongoDb}?retryWrites=true&w=majority`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
-console.log(uri);
 let port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/../public'));
