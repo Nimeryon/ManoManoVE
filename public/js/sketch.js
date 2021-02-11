@@ -56,5 +56,7 @@ function mousePressed() {
 }
 
 function mouseDragged() {
-    room.furnitures[room.selection].move(mouseX, mouseY);
+    if (room.selection) {
+        room.furnitures[room.selection].move(mouseX, mouseY);
+    }
 }
