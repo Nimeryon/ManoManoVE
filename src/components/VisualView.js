@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 // Material-ui
-import { Paper, Typography, Grid, Box, Container, CircularProgress, Divider, makeStyles } from '@material-ui/core';
+import { Paper, Typography, Grid, Box, Container, CircularProgress, Button, Divider, makeStyles } from '@material-ui/core';
+import { SwapHorizRounded, SwapVertRounded } from "@material-ui/icons";
 // Components
 import ObjectCard from "./ObjectCard";
+import InputForm from "./InputForm";
 // Query
 import { useQuery } from "@apollo/client";
 import ObjectQuery from "../query/ObjectQuery";
@@ -36,7 +38,7 @@ class VisualViewComponent extends Component {
         for (let i = 0; i < this.props.data.length; i++) {
             cards.push(<Grid item xs={12}>
                 <ObjectCard classes={this.props.classes} data={this.props.data[i]} />
-            </Grid>);
+            </Grid >);
         }
         return cards;
     }
@@ -46,6 +48,10 @@ class VisualViewComponent extends Component {
         document.getElementById("canvasBox").appendChild(canvas);
     }
 
+    clickHandler() {
+        room.resize();
+    }
+
     componentDidMount() {
         this.changeCanvasPos();
     }
@@ -53,6 +59,15 @@ class VisualViewComponent extends Component {
     render() {
         const { classes } = this.props;
         return <Container maxWidth="lg">
+            <Paper elevation={1} style={{ padding: 8, margin: 8 }}>
+                <Box width="100%" display="flex" justifyContent="center">
+                    <Grid container spacing={1} classes={classes.m}>
+                        <InputForm icon={<SwapHorizRounded />} width={6} emptyText={"longueur"} id={"width"} />
+                        <InputForm icon={<SwapVertRounded />} width={6} emptyText={"largeur"} id={"height"} />
+                    </Grid>
+                    <Button variant="contained" onClick={this.clickHandler} color="primary">Redimensionner</Button>
+                </Box>
+            </Paper>
             <Box width="100%" display="flex" justifyContent="center">
                 <Box id="canvasBox"></Box>
                 <Container maxWidth="xs">

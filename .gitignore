@@ -2,4 +2,3 @@ node_modules
 .vscode/
 .env
 public/js/bundle.js
-public/js/bundle.js

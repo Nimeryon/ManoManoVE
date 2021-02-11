@@ -8,31 +8,8 @@ function setup() {
     let canvas = createCanvas(800, 600);
     canvas.parent(document.getElementById("canvas"));
 
-    room = new Room(4.5, 2.3, canvas_width, canvas_height);
-    room.furnitures = [
-        new Furnitures(
-            [50, 100],
-            "table basse", ["1.5", "0.5"],
-            "#FFF000", [
-                [true, true, true, true],
-                [true, true, true, true],
-                [true, true, true, true],
-                [true, false, false, true],
-            ],
-            room.pixRatio
-        ),
-        new Furnitures(
-            [150, 100],
-            "canapé", ["2", "1"],
-            "#000000", [
-                [false, false, true, true],
-                [false, false, true, true],
-                [true, true, true, true],
-                [true, true, true, true],
-            ],
-            room.pixRatio
-        ),
-    ];
+    room = new Room(5, 5, canvas_width, canvas_height);
+    room.furnitures = [];
 }
 
 function draw() {
