@@ -40,16 +40,25 @@ class Room {
             this.furnitures[i].selected = false;
         }
     }
-    resize(w, h) {
-        this.width = w;
-        this.height = h;
+    resize() {
+        var w = parseFloat(document.getElementById("width").value);
+        var h = parseFloat(document.getElementById("height").value);
+
+        if (!w || !h) {
+            return;
+        }
+
+        this.width = w ? w : this.width;
+        this.height = h ? h : this.height;
+
+        console.log(this.width, this.height);
 
         this.pixRatio =
             w >= h * 2 ? w / (this.canvW - margin) : h / (this.canvH - margin);
         this.widthPix = w / this.pixRatio;
         this.heightPix = h / this.pixRatio;
 
-        this.x = canvW / 2 - this.widthPix / 2;
-        this.y = canvH / 2 - this.heightPix / 2;
+        this.x = this.canvW / 2 - this.widthPix / 2;
+        this.y = this.canvH / 2 - this.heightPix / 2;
     }
 }
