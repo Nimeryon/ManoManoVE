@@ -14,8 +14,13 @@ class Room {
 
         this.x = canvW / 2 - this.widthPix / 2;
         this.y = canvH / 2 - this.heightPix / 2;
+
+        this.selection = null;
+
+        this.furnitures = [];
     }
     draw() {
+        fill(0);
         strokeWeight(1);
         text(this.width + " m", this.x + this.widthPix / 2 - 5, this.y - 6);
         text(
@@ -24,6 +29,7 @@ class Room {
             this.y + this.heightPix / 2 - 5
         );
 
+        fill(255);
         strokeWeight(4);
         stroke(0);
         rect(this.x, this.y, this.widthPix, this.heightPix);
