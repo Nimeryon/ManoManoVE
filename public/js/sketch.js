@@ -6,7 +6,7 @@ var furnitures;
 
 function setup() {
     createCanvas(800, 600);
-    room = new Room(15, 10, canvas_width, canvas_height);
+    room = new Room(7.5, 4.3, canvas_width, canvas_height);
     room.furnitures = [
         new Furnitures(
             [50, 100],
@@ -31,6 +31,7 @@ function setup() {
             room.pixRatio
         ),
     ];
+    room.furnitures[0].rotate();
 }
 
 function draw() {

@@ -73,4 +73,25 @@ class Furnitures {
         this.blockWidth = this.widthPix / 4;
         this.blockHeight = this.heightPix / 4;
     }
+
+    rotate() {
+        var newShape = Array(4);
+        for (var i = 0; i < 4; i++) {
+            newShape[i] = Array(4);
+        }
+        for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+                newShape[i][j] = this.shape[4 - j - 1][i];
+            }
+        }
+        this.shape = newShape;
+        var tmp = this.width;
+        var tmp2 = this.widthPix;
+        this.width = this.height;
+        this.widthPix = this.heightPix;
+        this.height = tmp;
+        this.heightPix = tmp2;
+        this.blockWidth = this.widthPix / 4;
+        this.blockHeight = this.heightPix / 4;
+    }
 }
