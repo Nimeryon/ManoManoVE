@@ -8,11 +8,20 @@
             border: 1px solid;
         }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 
 <body>
     <noscript>Please enable javascript in order to view this website.</noscript>
-    <div id="root"></div>
+    <div id="root" class="container">
+        <main></main>
+
+        <div class="row" style="width: 800px; margin: 0.5px">
+            <input type="text" id="width" placeholder="Longueur" class="col-sm form-control" />
+            <input type="text" id="height" placeholder="Largeur" class="col-sm form-control" />
+            <button class="btn btn-success m-1">Redimensionner</button>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
     <script src="js/furnitures.js"></script>
     <script src="js/room.js"></script>

@@ -1,18 +1,18 @@
-var width = 800;
-var height = 400;
+var canvas_width = 800;
+var canvas_height = 600;
 
 var room;
 var furnitures;
 
 function setup() {
-    createCanvas(800, 400);
-    room = new Room(4.5, 2.3, width, height);
+    createCanvas(800, 600);
+    room = new Room(4.5, 2.3, canvas_width, canvas_height);
     room.furnitures = [
         new Furnitures(
-            [50, 50],
-            "table", ["1", "1"],
+            [50, 100],
+            "table basse", ["1.5", "0.5"],
             "#FFF000", [
-                [true, false, true, true],
+                [true, true, true, true],
                 [true, true, true, true],
                 [true, true, true, true],
                 [true, false, false, true],
@@ -20,13 +20,13 @@ function setup() {
             room.pixRatio
         ),
         new Furnitures(
-            [150, 50],
-            "table", ["2", "1"],
+            [150, 100],
+            "canapé", ["2", "1"],
             "#000000", [
-                [true, false, true, false],
-                [false, true, false, true],
-                [true, false, true, false],
-                [true, true, false, true],
+                [false, false, true, true],
+                [false, false, true, true],
+                [true, true, true, true],
+                [true, true, true, true],
             ],
             room.pixRatio
         ),
@@ -57,6 +57,6 @@ function mousePressed() {
 
 function mouseDragged() {
     if (room.selection != null) {
-        room.furnitures[room.selection].move(mouseX, mouseY);
+        room.furnitures[room.selection].move(mouseX, mouseY, room);
     }
 }
