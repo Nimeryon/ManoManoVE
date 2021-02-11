@@ -28,18 +28,20 @@ class Furnitures {
         for (var i = 0; i < this.shape.length; i++) {
             var ligne = this.shape[i];
             for (var j = 0; j < this.shape.length; j++) {
-                if (ligne[j] == true) {
-                    fill(col);
-                    noStroke();
-                    rect(
-                        this.x + j * this.blockWidth,
-                        this.y + i * this.blockHeight,
-                        this.blockWidth,
-                        this.blockHeight
-                    );
-                }
+                fill(ligne[j] ? col : 255);
+                noStroke();
+                rect(
+                    this.x + j * this.blockWidth,
+                    this.y + i * this.blockHeight,
+                    this.blockWidth,
+                    this.blockHeight
+                );
             }
         }
+    }
+    move(x, y) {
+        this.x = x - this.widthPix / 2;
+        this.y = y - this.heightPix / 2;
     }
 
     mouseIn(x, y) {

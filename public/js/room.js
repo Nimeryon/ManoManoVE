@@ -34,4 +34,10 @@ class Room {
         stroke(0);
         rect(this.x, this.y, this.widthPix, this.heightPix);
     }
+    clearSelection() {
+        this.selection = null;
+        for (var i = this.furnitures.length - 1; i >= 0; i--) {
+            this.furnitures[i].selected = false;
+        }
+    }
 }
