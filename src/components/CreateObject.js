@@ -105,13 +105,13 @@ class CreateObjectComponent extends Component {
             <Paper elevation={1} className={classes.p}>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <Box display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h4">Nouvelle objet</Typography>
+                        <Typography variant="h4">Nouvel objet</Typography>
                     </Box>
                     <Box width="100%" display="flex">
                         <InputForm error={this.state.nameError} helper={"Aucun nom"} onChange={(e) => { this.setState({ name: e.target.value }); }} width={12} emptyText={"Nom"} />
                     </Box>
                     <Box style={{ marginTop: 16 }} width="100%" display="flex">
-                        <Typography id="size-width" gutterBottom>Largeur de la pièce</Typography>
+                        <Typography id="size-width" gutterBottom>Largeur de l'objet</Typography>
                         <Slider
                             aria-labelledby="size-width"
                             defaultValue={this.state.width}
@@ -126,7 +126,7 @@ class CreateObjectComponent extends Component {
                         />
                     </Box>
                     <Box style={{ marginBottom: 16 }} width="100%" display="flex">
-                        <Typography id="size-height" gutterBottom>Hauteur de la pièce</Typography>
+                        <Typography id="size-height" gutterBottom>Longueur de l'objet</Typography>
                         <Slider
                             aria-labelledby="size-height"
                             defaultValue={this.state.height}
