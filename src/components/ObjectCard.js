@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Typography, Grid, IconButton, Box } from '@material-ui/core';
+import { Card, Typography, Grid, IconButton, Box, Divider } from '@material-ui/core';
 import { AddRounded } from "@material-ui/icons";
 
 class ObjectCard extends Component {
@@ -31,15 +31,17 @@ class ObjectCard extends Component {
         const { classes } = this.props;
         return <Card key={this.props.data.id} onClick={this.props.selectCard}>
             <Box width="100%" display="flex" justifyContent="center">
-                <Box width="70%">
+                <Box width="80%">
                     <Grid container spacing={1}>
                         <Grid item xs={6}>
                             <Typography variant="h5">{this.props.data.name}</Typography>
                         </Grid>
                         <Grid item xs={6}>
-                            <Grid container>
-                                {this.createVisuals()}
-                            </Grid>
+                            <Box width="100%" height="100%" display="flex" justifyContent="center" alignItems="center">
+                                <Grid container>
+                                    {this.createVisuals()}
+                                </Grid>
+                            </Box>
                         </Grid>
                         <Grid item xs={6}>
                             <Typography variant="h5">L: {this.props.data.size[0]}m</Typography>
@@ -49,13 +51,14 @@ class ObjectCard extends Component {
                         </Grid>
                     </Grid>
                 </Box>
-                <Box width="20%">
+                <Divider className={classes.m} orientation="vertical" flexItem />
+                <Box width="15%" display="flex" justifyContent="center" alignItems="center">
                     <IconButton onClick={this.handleClick.bind(this)} color="primary">
                         <AddRounded />
                     </IconButton>
                 </Box>
             </Box>
-        </Card>
+        </Card >
     }
 }
 

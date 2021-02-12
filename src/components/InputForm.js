@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField, OutlinedInput, InputLabel, Grid, Box } from '@material-ui/core';
+import { TextField, Grid, Box } from '@material-ui/core';
 
 class InputForm extends Component {
     render() {

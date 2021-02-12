@@ -23,16 +23,17 @@ if (window.location.pathname == "/") {
     }
 
     function mousePressed() {
-        for (var i = room.furnitures.length - 1; i >= 0; i--) {
-            if (room.furnitures[i].mouseIn(mouseX, mouseY)) {
-                room.clearSelection();
-                room.furnitures[i].selected = true;
-                room.selection = i;
-                return;
-            } else {
-                room.clearSelection();
+        if (mouseX > 0 && mouseX <= canvas_width && mouseY > 0 && mouseY <= canvas_height)
+            for (var i = room.furnitures.length - 1; i >= 0; i--) {
+                if (room.furnitures[i].mouseIn(mouseX, mouseY)) {
+                    room.clearSelection();
+                    room.furnitures[i].selected = true;
+                    room.selection = i;
+                    return;
+                } else {
+                    room.clearSelection();
+                }
             }
-        }
     }
 
     function mouseDragged() {
